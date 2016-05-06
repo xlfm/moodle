@@ -150,6 +150,7 @@ class cachestore_memcached extends cache_store implements cache_is_configurable 
         }
 
         $compression = array_key_exists('compression', $configuration) ? (bool)$configuration['compression'] : true;
+        $binary = array_key_exists('binary', $configuration) ? (bool)$configuration['binary'] : false;
         if (array_key_exists('serialiser', $configuration)) {
             $serialiser = (int)$configuration['serialiser'];
         } else {
@@ -196,6 +197,7 @@ class cachestore_memcached extends cache_store implements cache_is_configurable 
         }
 
         $this->options[Memcached::OPT_COMPRESSION] = $compression;
+        $this->options[Memcached::OPT_BINARY_PROTOCOL] = $binary;
         $this->options[Memcached::OPT_SERIALIZER] = $serialiser;
         $this->options[Memcached::OPT_PREFIX_KEY] = $this->prefix = (string)$prefix;
         $this->options[Memcached::OPT_HASH] = $hashmethod;

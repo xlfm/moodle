@@ -91,6 +91,8 @@ $string['testservers_desc'] = 'One or more connection strings for memcached serv
 As an example: 127.0.0.1:11211';
 $string['usecompression'] = 'Use compression';
 $string['usecompression_help'] = 'Enables or disables payload compression. When enabled, item values longer than a certain threshold (currently 100 bytes) will be compressed during storage and decompressed during retrieval transparently.';
+$string['usebinary'] = 'Use binary';
+$string['usebinary_help'] = 'Enables or disables binary protocal. When enabled, the content of the serialized produces less The content of the compact 255, for example, using 1 byte.';
 $string['useserialiser'] = 'Use serialiser';
 $string['useserialiser_help'] = 'Specifies the serializer to use for serializing non-scalar values.
 The valid serializers are Memcached::SERIALIZER_PHP or Memcached::SERIALIZER_IGBINARY.

@@ -63,6 +63,11 @@ class cachestore_memcached_addinstance_form extends cachestore_addinstance_form 
         $form->setDefault('compression', 1);
         $form->setType('compression', PARAM_BOOL);
 
+        $form->addElement('selectyesno', 'binary', get_string('usebinary', 'cachestore_memcached'));
+        $form->addHelpButton('binary', 'usebinary', 'cachestore_memcached');
+        $form->setDefault('binary', 0);
+        $form->setType('binary', PARAM_BOOL);
+
         $serialiseroptions = cachestore_memcached::config_get_serialiser_options();
         $form->addElement('select', 'serialiser', get_string('useserialiser', 'cachestore_memcached'), $serialiseroptions);
         $form->addHelpButton('serialiser', 'useserialiser', 'cachestore_memcached');
