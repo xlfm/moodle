@@ -34,6 +34,7 @@ defined('MOODLE_INTERNAL') || die();
  * Configuration options:
  *      servers:        string: host:port:weight , ...
  *      compression:    true, false
+ *      binary:         true, false
  *      serialiser:     SERIALIZER_PHP, SERIALIZER_JSON, SERIALIZER_IGBINARY
  *      prefix:         string: defaults to instance name
  *      hashmethod:     HASH_DEFAULT, HASH_MD5, HASH_CRC, HASH_FNV1_64, HASH_FNV1A_64, HASH_FNV1_32,
@@ -609,6 +610,7 @@ class cachestore_memcached extends cache_store implements cache_is_configurable 
         return array(
             'servers' => $servers,
             'compression' => $data->compression,
+            'binary' => $data->binary,
             'serialiser' => $data->serialiser,
             'prefix' => $data->prefix,
             'hash' => $data->hash,
@@ -636,6 +638,9 @@ class cachestore_memcached extends cache_store implements cache_is_configurable 
         }
         if (isset($config['compression'])) {
             $data['compression'] = (bool)$config['compression'];
+        }
+        if (isset($config['binary'])) {
+            $data['binary'] = (bool)$config['binary'];
         }
         if (!empty($config['serialiser'])) {
             $data['serialiser'] = $config['serialiser'];
@@ -709,6 +714,9 @@ class cachestore_memcached extends cache_store implements cache_is_configurable 
         $configuration['servers'] = explode("\n", $config->testservers);
         if (!empty($config->testcompression)) {
             $configuration['compression'] = $config->testcompression;
+        }
+        if (!empty($config->testbinary)) {
+            $configuration['binary'] = $config->testbinary;
         }
         if (!empty($config->testserialiser)) {
             $configuration['serialiser'] = $config->testserialiser;

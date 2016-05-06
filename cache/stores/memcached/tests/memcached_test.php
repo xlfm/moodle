@@ -290,6 +290,7 @@ class cachestore_memcached_test extends cachestore_tests {
         $connection->addServers($this->get_servers(TEST_CACHESTORE_MEMCACHED_TESTSERVERS));
         $connection->setOptions(array(
             Memcached::OPT_COMPRESSION => true,
+            memcached::OPT_BINARY_PROTOCOL => true,
             Memcached::OPT_SERIALIZER => Memcached::SERIALIZER_PHP,
             Memcached::OPT_PREFIX_KEY => 'phpunit_',
             Memcached::OPT_BUFFER_WRITES => false
@@ -333,6 +334,7 @@ class cachestore_memcached_test extends cachestore_tests {
         $connection->addServers($this->get_servers(TEST_CACHESTORE_MEMCACHED_TESTSERVERS));
         $connection->setOptions(array(
             Memcached::OPT_COMPRESSION => true,
+            memcached::OPT_BINARY_PROTOCOL => true,
             Memcached::OPT_SERIALIZER => Memcached::SERIALIZER_PHP,
             Memcached::OPT_PREFIX_KEY => 'phpunit_',
             Memcached::OPT_BUFFER_WRITES => false
