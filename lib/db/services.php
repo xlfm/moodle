@@ -88,7 +88,7 @@ $functions = array(
         'methodname' => 'delete_cohort_members',
         'classpath' => 'cohort/externallib.php',
         'description' => 'Deletes cohort members.',
-        'type' => 'delete',
+        'type' => 'write',
         'capabilities' => 'moodle/cohort:assign'
     ),
     'core_cohort_delete_cohorts' => array(
@@ -96,7 +96,7 @@ $functions = array(
         'methodname' => 'delete_cohorts',
         'classpath' => 'cohort/externallib.php',
         'description' => 'Deletes all specified cohorts.',
-        'type' => 'delete',
+        'type' => 'write',
         'capabilities' => 'moodle/cohort:manage'
     ),
     'core_cohort_get_cohort_members' => array(
@@ -458,7 +458,7 @@ $functions = array(
         'methodname' => 'delete_group_members',
         'classpath' => 'group/externallib.php',
         'description' => 'Deletes group members.',
-        'type' => 'delete',
+        'type' => 'write',
         'capabilities' => 'moodle/course:managegroups'
     ),
     'core_group_delete_groupings' => array(
@@ -473,7 +473,7 @@ $functions = array(
         'methodname' => 'delete_groups',
         'classpath' => 'group/externallib.php',
         'description' => 'Deletes all specified groups.',
-        'type' => 'delete',
+        'type' => 'write',
         'capabilities' => 'moodle/course:managegroups'
     ),
     'core_group_get_activity_allowed_groups' => array(
@@ -962,6 +962,7 @@ $functions = array(
         'type'         => 'read',
         'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
+        'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_competency_delete_competency' => array(
         'classname'    => 'core_competency\external',
@@ -1061,6 +1062,7 @@ $functions = array(
         'type'         => 'read',
         'capabilities' => 'moodle/competency:coursecompetencyview',
         'ajax'         => true,
+        'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_competency_count_competencies_in_course' => array(
         'classname'    => 'core_competency\external',
@@ -1394,6 +1396,7 @@ $functions = array(
         'type'         => 'read',
         'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
+        'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_competency_add_related_competency' => array(
         'classname'    => 'core_competency\external',
@@ -1493,6 +1496,7 @@ $functions = array(
         'type'         => 'read',
         'capabilities' => 'moodle/competency:usercompetencyview',
         'ajax'         => true,
+        'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_competency_user_competency_viewed_in_plan' => array(
         'classname'    => 'core_competency\external',
@@ -1502,6 +1506,7 @@ $functions = array(
         'type'         => 'read',
         'capabilities' => 'moodle/competency:usercompetencyview',
         'ajax'         => true,
+        'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_competency_user_competency_viewed_in_course' => array(
         'classname'    => 'core_competency\external',
@@ -1511,6 +1516,7 @@ $functions = array(
         'type'         => 'read',
         'capabilities' => 'moodle/competency:usercompetencyview',
         'ajax'         => true,
+        'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_competency_user_competency_plan_viewed' => array(
         'classname'    => 'core_competency\external',
@@ -1520,6 +1526,7 @@ $functions = array(
         'type'         => 'read',
         'capabilities' => 'moodle/competency:usercompetencyview',
         'ajax'         => true,
+        'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_competency_grade_competency' => array(
         'classname'    => 'core_competency\external',
@@ -1547,6 +1554,7 @@ $functions = array(
         'type'         => 'write',
         'capabilities' => 'moodle/competency:competencygrade',
         'ajax'         => true,
+        'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_competency_unlink_plan_from_template' => array(
         'classname'    => 'core_competency\external',
@@ -1592,6 +1600,7 @@ $functions = array(
         'type'          => 'write',
         'capabilities'  => 'moodle/competency:evidencedelete',
         'ajax'          => true,
+        'services'      => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
 
     'core_webservice_get_site_info' => array(
